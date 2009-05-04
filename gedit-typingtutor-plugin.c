@@ -124,6 +124,27 @@ document_callback(GtkTextBuffer *textbuffer,
 		&start_new,
 		(gtk_text_iter_get_offset(location) - length));
 
+	/*
+	* For debugging porpose
+	*
+	g_print("Text1 Start: %d\n"
+		"Text1 End: %d\n"
+		"Text Start: %d\n"
+		"Text End: %d\n"
+		"Byte Length: %d\n"
+		"Unicode Length: %d\n"
+		"Text1: %s\n"
+		"Text: %s\n",
+		gtk_text_iter_get_offset(&start),
+		gtk_text_iter_get_offset(&end),
+		gtk_text_iter_get_offset(&start_new),
+		gtk_text_iter_get_offset(location),
+		len,
+		length,
+		text1,
+		text);
+	*/
+		
 	if(g_strcmp0(text1, text))
 	{
 		gtk_text_buffer_apply_tag(textbuffer,
