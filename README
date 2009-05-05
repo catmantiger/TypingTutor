@@ -1,0 +1,84 @@
+TypingTutor
+===========
+
+Simple plugin to practice typing in gedit.
+
+Language Support
+================
+
+It uses gedit's GeditDocument object, so languages
+which works in gedit, will work with this plugin.
+
+Patching Gedit
+==============
+
+Clone gedit,
+
+	git clone git://git.gnome.org/gedit
+
+Clone TypingTutor,
+
+	git clone git://github.com/mohan43u/TypingTutor.git 
+
+Patch gedit with 'gedit-typingtutor-plugin-0.1.patch',
+
+	cd gedit
+	patch -p1 < ../TypingTutor/gedit-typingtutor-plugin-0.1.patch
+	./autogen.sh
+	./configure --prefix="/usr"
+	cd plugins/TypingTutor
+	make
+	sudo make install
+
+Now you will get three new files in /usr/lib/gedit-2/plugins,
+
+	libtypingtutor.la
+	libtypingtutor.so
+	typingtutor.gedit-plugin
+
+Copying Binaries Directly
+=========================
+
+Download gedit-typingtutor-plugin-0.1.binary.tar.bz2 from here,
+
+	http://github.com/mohan43u/TypingTutor/tree/master
+
+Extract and copy the libraries to /usr/lib/gedit-2/plugins,
+
+	tar xvjf gedit-typingtutor-plugin-0.1.binary.tar.bz2
+	sudo cp -v gedit-typingtutor-plugin-0.1.binary/* /usr/lib/gedit-2/plugins
+
+Howto use TypingTutor
+=====================
+
+Once shared libraries copied to plugins directory, you will see 'TypingTutor'
+plugin listed in gedit's 'preferences->plugins' window. Enabling the plugin
+will add 'TypingTutor' to gedit's 'Tools' menu.
+
+Open one training text file for your language in gedit, or create a new one.
+Click, 'Tools -> TypingTutor', you will see a new window with the training
+training text file on top text area and an empty text area in bottom, right
+click on the bottom text area and choose preferred input method for your
+language.
+
+Click 'Start timer' and start typing in the bottom text area, whenever a
+character entered, it will be compared with the top text area's character
+which is present in the same location, if both characters are not equal, then
+the entered character will be marked in red, and 'Mistake key' will be
+incremented one. Once finish, click 'Stop timer', and you will see details
+like how long you typed, how many mistakes happened and how many keystrokes
+entered.
+
+Future Additions
+================
+
+At present, 'Elapsed time' details will be updated only when we enter a
+character, in future, it should be updated automatically without entering
+a keystroke.
+
+Adding 'words per minute', 'accuracy percentage' in details tab will he helpful
+for the trainers.
+
+Need to show keyboard layout image for the selected language at the bottom
+of TypingTutor window. gedit supports lot of languages, collecting layout
+images for all languages is a big task.
