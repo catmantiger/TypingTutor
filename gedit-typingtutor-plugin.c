@@ -209,7 +209,7 @@ gedit_typingtutor_plugin_callback(GtkAction *action,gpointer data)
 			GTK_MESSAGE_ERROR,
 			GTK_BUTTONS_OK,
 			"No File\n\n"
-			"open any file in gedit and click Tooks->TypingTutor");
+			"open any file in gedit and click Tools->TypingTutor");
 		g_signal_connect_swapped(G_OBJECT(messagebox),
 			"response",
 			G_CALLBACK(gtk_widget_destroy),
@@ -400,8 +400,8 @@ impl_activate(GeditPlugin *plugin, GeditWindow *window)
 	GList *list;
 
 	action = gtk_action_new("TypingTutor",
-		"TypingTutor",
-		"compare text",
+		"_TypingTutor",
+		"compares text",
 		NULL);
 
 	g_signal_connect(G_OBJECT(action),

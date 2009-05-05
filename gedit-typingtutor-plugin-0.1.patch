@@ -72,7 +72,7 @@ index 0000000..884b00f
 +DISTCLEANFILES = 	$(plugin_DATA)
 diff --git a/plugins/TypingTutor/gedit-typingtutor-plugin.c b/plugins/TypingTutor/gedit-typingtutor-plugin.c
 new file mode 100644
-index 0000000..5482032
+index 0000000..b6ac037
 --- /dev/null
 +++ b/plugins/TypingTutor/gedit-typingtutor-plugin.c
 @@ -0,0 +1,457 @@
@@ -287,7 +287,7 @@ index 0000000..5482032
 +			GTK_MESSAGE_ERROR,
 +			GTK_BUTTONS_OK,
 +			"No File\n\n"
-+			"open any file in gedit and click Tooks->TypingTutor");
++			"open any file in gedit and click Tools->TypingTutor");
 +		g_signal_connect_swapped(G_OBJECT(messagebox),
 +			"response",
 +			G_CALLBACK(gtk_widget_destroy),
@@ -478,8 +478,8 @@ index 0000000..5482032
 +	GList *list;
 +
 +	action = gtk_action_new("TypingTutor",
-+		"TypingTutor",
-+		"compare text",
++		"_TypingTutor",
++		"compares text",
 +		NULL);
 +
 +	g_signal_connect(G_OBJECT(action),
@@ -638,7 +638,7 @@ index 0000000..62b8ca8
 +#endif /* __GEDIT_TYPINGTUTOR_PLUGIN_H__ */
 diff --git a/plugins/TypingTutor/typingtutor.gedit-plugin.desktop.in b/plugins/TypingTutor/typingtutor.gedit-plugin.desktop.in
 new file mode 100644
-index 0000000..aec8470
+index 0000000..ad8e95b
 --- /dev/null
 +++ b/plugins/TypingTutor/typingtutor.gedit-plugin.desktop.in
 @@ -0,0 +1,8 @@
@@ -649,4 +649,4 @@ index 0000000..aec8470
 +_Description=Compares Text
 +Authors=Mohan Raman <mohan43u@gmail.com>
 +Copyright=Copyright © 2009 Mohan Raman
-+Website=http://mohan43u.wordpress.com
++Website=http://github.com/mohan43u/TypingTutor/tree/master
