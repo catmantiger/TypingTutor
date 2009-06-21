@@ -31,7 +31,7 @@ print_elapsed_time(GtkWidget *timerlabel,
 	time_t elapsedtime = (time_t) g_timer_elapsed(timer,NULL);
 	struct tm elapsed;
 
-	localtime_r(&elapsedtime,&elapsed);
+	gmtime_r(&elapsedtime,&elapsed);
 
 	/*
 	* 'struct tm' defaults tm_min to 30
@@ -39,9 +39,6 @@ print_elapsed_time(GtkWidget *timerlabel,
 	* the default values to get what we
 	* want.
 	*/
-
-	elapsed.tm_min = elapsed.tm_min - 30;
-	elapsed.tm_hour = elapsed.tm_hour - 5;
 
 	strftime(elapsedtimestring,
 		20,
