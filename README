@@ -46,7 +46,7 @@ Download gedit-typingtutor-plugin-0.2.binary.tar.bz2 from here,
 
 	http://github.com/mohan43u/TypingTutor/tree/master
 
-Extract and copy the libraries to /usr/lib/gedit-2/plugins,
+Extract and copy the libraries to ~/.gnome2/gedit/plugins
 
 	tar xvjf gedit-typingtutor-plugin-0.2.binary.tar.bz2
 	cp -v gedit-typingtutor-plugin-0.2.binary/* ~/.gnome2/gedit/plugins
