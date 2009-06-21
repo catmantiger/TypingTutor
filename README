@@ -26,11 +26,14 @@ Patch gedit with 'gedit-typingtutor-plugin-0.1.patch',
 	patch -p1 < ../TypingTutor/gedit-typingtutor-plugin-0.1.patch
 	./autogen.sh
 	./configure --prefix="/usr"
-	cd plugins/TypingTutor
+	cd plugins/typingtutor
 	make
-	sudo make install
+	make install DESTDIR="${HOME}/.gnome2/gedit/plugins"
+	cd "${HOME}/.gnome2/gedit/plugins"
+	mv usr/lib/gedit-2/plugins/* .
+	rm -frv usr # (careful)
 
-Now you will get three new files in /usr/lib/gedit-2/plugins,
+Now you will get three new files in ~/.gnome2/gedit/plugins
 
 	libtypingtutor.la
 	libtypingtutor.so
@@ -46,7 +49,7 @@ Download gedit-typingtutor-plugin-0.1.binary.tar.bz2 from here,
 Extract and copy the libraries to /usr/lib/gedit-2/plugins,
 
 	tar xvjf gedit-typingtutor-plugin-0.1.binary.tar.bz2
-	sudo cp -v gedit-typingtutor-plugin-0.1.binary/* /usr/lib/gedit-2/plugins
+	cp -v gedit-typingtutor-plugin-0.1.binary/* ~/.gnome2/gedit/plugins
 
 Howto use TypingTutor
 =====================
