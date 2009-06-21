@@ -20,10 +20,10 @@ Clone TypingTutor,
 
 	git clone git://github.com/mohan43u/TypingTutor.git 
 
-Patch gedit with 'gedit-typingtutor-plugin-0.1.patch',
+Patch gedit with 'gedit-typingtutor-plugin-0.2.patch',
 
 	cd gedit
-	patch -p1 < ../TypingTutor/gedit-typingtutor-plugin-0.1.patch
+	patch -p1 < ../TypingTutor/gedit-typingtutor-plugin-0.2.patch
 	./autogen.sh
 	./configure --prefix="/usr"
 	cd plugins/typingtutor
@@ -42,14 +42,14 @@ Now you will get three new files in ~/.gnome2/gedit/plugins
 Copying Binaries Directly
 =========================
 
-Download gedit-typingtutor-plugin-0.1.binary.tar.bz2 from here,
+Download gedit-typingtutor-plugin-0.2.binary.tar.bz2 from here,
 
 	http://github.com/mohan43u/TypingTutor/tree/master
 
 Extract and copy the libraries to /usr/lib/gedit-2/plugins,
 
-	tar xvjf gedit-typingtutor-plugin-0.1.binary.tar.bz2
-	cp -v gedit-typingtutor-plugin-0.1.binary/* ~/.gnome2/gedit/plugins
+	tar xvjf gedit-typingtutor-plugin-0.2.binary.tar.bz2
+	cp -v gedit-typingtutor-plugin-0.2.binary/* ~/.gnome2/gedit/plugins
 
 Howto use TypingTutor
 =====================
