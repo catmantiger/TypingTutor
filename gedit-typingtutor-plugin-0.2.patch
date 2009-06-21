@@ -74,10 +74,10 @@ index 0000000..884b00f
 +DISTCLEANFILES = 	$(plugin_DATA)
 diff --git a/plugins/typingtutor/gedit-typingtutor-plugin.c b/plugins/typingtutor/gedit-typingtutor-plugin.c
 new file mode 100644
-index 0000000..c070f03
+index 0000000..198a189
 --- /dev/null
 +++ b/plugins/typingtutor/gedit-typingtutor-plugin.c
-@@ -0,0 +1,454 @@
+@@ -0,0 +1,447 @@
 +/*
 +* gedit-typingtutor-plugin.c
 +* Copyright (C) 2009  "Mohan Raman" <mohan43u@gmail.com>
@@ -112,13 +112,6 @@ index 0000000..c070f03
 +	struct tm elapsed;
 +
 +	gmtime_r(&elapsedtime,&elapsed);
-+
-+	/*
-+	* 'struct tm' defaults tm_min to 30
-+	* and tm_hour to 5, Need to subtract
-+	* the default values to get what we
-+	* want.
-+	*/
 +
 +	strftime(elapsedtimestring,
 +		20,
